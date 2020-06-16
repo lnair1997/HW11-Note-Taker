@@ -1,8 +1,10 @@
 const express = require('express');
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
+
+//HTML Routes
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
