@@ -6,7 +6,7 @@ const PORT = 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 //HTML Routes
 app.get("*", function (req, res) {
@@ -18,6 +18,6 @@ app.get("/notes", function (req, res) {
 });
 
 
-app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
+app.listen(PORT, function () {
+    console.log(`Server is listening on: http://localhost:/${PORT}`);
+});
