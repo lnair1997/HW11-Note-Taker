@@ -12,7 +12,7 @@ router.post("/notes", function (req, res) {
     data.push(req.body);
     res.json(req.body);
 
-    fs.writeFileSync("../db/db.json", JSON.stringify(newData), (err) => {
+    fs.writeFile("./db/db.json", JSON.stringify(newData), (err) => {
         if (err) {
             console.log(err);
         } else {
