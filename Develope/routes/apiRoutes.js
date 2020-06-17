@@ -29,3 +29,17 @@ router.delete("/notes/:id", function (req, res) {
 //2. remove note with ID
 //3. rewrite notes to json file
 module.exports = router;
+
+app.get("/api/characters/:character", function(req, res) {
+    const chosen = req.params.character;
+  
+    console.log(chosen);
+  
+    for (let i = 0; i < characters.length; i++) {
+      if (chosen === characters[i].routeName) {
+        return res.json(characters[i]);
+      }
+    }
+  
+    return res.json(false);
+  });
