@@ -4,7 +4,7 @@ const router = express.Router();
 
 // HTML Routes---------------------------------------------------------------------------
 router.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/note.html"));
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
 
 router.get("*", function (req, res) {
