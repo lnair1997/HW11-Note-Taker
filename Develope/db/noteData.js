@@ -1,7 +1,7 @@
 const noteDataArray = [
     {
-        noteTitle:"Ahmed",
-        noteText: "ahmed@gmail.com"
+        noteTitle:"Tisha",
+        noteText: "tisha@gmail.com"
     }
 ];
 
