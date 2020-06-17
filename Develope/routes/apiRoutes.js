@@ -6,3 +6,5 @@ const router = express.Router();
 router.get("/notes", function (req, res) {
     res.json(data);
 });
+
+module.exports = router;
