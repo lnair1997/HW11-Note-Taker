@@ -19,10 +19,25 @@ app.get("/notes", function (req, res) {
 });
 
 //API Routes---------------------------------------------------------------------------
+// app.get("/api/notes", (req, res) => {
+//     console.log(`/api/notes called`);
+//     res.json("./db/db.json");
+// });
+
 app.get("/api/notes", (req, res) => {
-    console.log(`/api/notes called`);
-    res.json("./db/notes");
+    const data = fs.readFileSync("./db/db.json", "utf8");
+    res.json(JSON.parse(data));
 });
+
+app.post("/api/notes", (req, res) => {
+    console.log(`-----------POST /api/notes called`);
+    const newNote = req.body;
+    // newNote.id = uniqid();
+    console.log('-----------Posting new note!');
+    notes.push(newNote);
+    res.json(newNote);
+  });
+
 
 
 
