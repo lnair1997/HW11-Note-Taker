@@ -21,4 +21,11 @@ router.post("/notes", function (req, res) {
     });
 });
 
+router.delete("/notes/:id", function (req, res) {
+
+})
+
+//1. read db.json
+//2. remove note with ID
+//3. rewrite notes to json file
 module.exports = router;
