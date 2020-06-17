@@ -1,17 +1,5 @@
-const fs = require("fs");
-const noteData = require("./db/noteData");
-const express = require("express");
-const app = express();
+const express = require('express');
+const fs = require('fs');
 
-//API Routes---------------------------------------------------------------------------
-
-app.get("/api/notes", function (req, res) {
-    res.json(noteData);
-});
-
-app.post("/api/notes", function (req, res) {
-    const newNote = req.body;
-    noteData.push(newNote);
-    res.json(newNote);
-});
-
+const data = require("../db/db.json");
+const router = express.Router();
