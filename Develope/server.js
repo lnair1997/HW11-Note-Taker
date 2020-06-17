@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require("path");
 const fs = require("fs");
+const noteData = require("./db/noteData");
 
 const app = express();
 const PORT = 8080;
@@ -19,25 +20,14 @@ app.get("/notes", function (req, res) {
 });
 
 //API Routes---------------------------------------------------------------------------
-// app.get("/api/notes", (req, res) => {
-//     console.log(`/api/notes called`);
-//     res.json("./db/db.json");
-// });
-
-app.get("/api/notes", (req, res) => {
-    const data = fs.readFileSync("./db/db.json", "utf8");
-    res.json(JSON.parse(data));
+app.get("/api/notes", function (req, res) {
+    res.json(noteData);
 });
 
-app.post("/api/notes", (req, res) => {
-    console.log(`-----------POST /api/notes called`);
-    const newNote = req.body;
-    // newNote.id = uniqid();
-    console.log('-----------Posting new note!');
-    notes.push(newNote);
-    res.json(newNote);
-  });
-
+app.post ("api/notes", function(req, res) {
+    noteData.push(req.body);
+    res.json(true);
+})
 
 
 
